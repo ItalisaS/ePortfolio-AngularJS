@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="ShopApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Shopping List</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<script src="App.js"></script>
+</head>
+<body>
+	<div ng-controller="ShopController">
+		<h1>My Shopping List</h1>
+
+		<ol>
+			<li ng-repeat="item in items">
+				<input type="checkbox" ng-click="deleteItem(item)" ng-model="item.bought"> 
+				<label>{{item.text}}</label>
+			</li>
+		</ol>
+		<br> <input type="text" ng-model="newItem" placeholder="New Item">
+		<button type="submit" ng-click="addItem()">Add Item
+			{{newItem}}</button>
+		<br> <br>
+		<button type="submit" ng-click="clearList()">Clear Shopping List</button>
+	</div>
+</body>
+</html>
